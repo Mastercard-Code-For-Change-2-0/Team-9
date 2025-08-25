@@ -29,7 +29,7 @@ function EditStudentModal({ student, onClose, onSave }) {
     });
   };
   return (
-  <div className="fixed inset-0 bg-blue-100 bg-opacity-60 flex items-center justify-center z-50">
+  <div className="fixed inset-0 bg-blue-100 bg-o  city-60 flex items-center justify-center z-50">
       <div className="bg-white rounded-lg shadow-lg p-8 w-full max-w-md max-h-[90vh] overflow-y-auto">
         <h2 className="text-xl font-bold text-blue-600 mb-4">Update Student Data</h2>
         <div className="flex gap-4 mb-6">
