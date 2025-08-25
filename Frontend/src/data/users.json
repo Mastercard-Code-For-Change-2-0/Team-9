@@ -1,0 +1,57 @@
+[
+  {
+    "id": 1,
+    "username": "john_doe",
+    "password": "password123",
+    "name": "John Doe",
+    "role": "student",
+    "email": "john.doe@example.com",
+    "skills": ["JavaScript", "React", "Node.js"],
+    "program": "Web Development",
+    "status": "active"
+  },
+  {
+    "id": 2,
+    "username": "jane_smith",
+    "password": "password456",
+    "name": "Jane Smith",
+    "role": "student",
+    "email": "jane.smith@example.com",
+    "skills": ["Python", "Data Analysis", "Machine Learning"],
+    "program": "Data Science",
+    "status": "active"
+  },
+  {
+    "id": 3,
+    "username": "admin",
+    "password": "admin123",
+    "name": "Administrator",
+    "role": "admin",
+    "email": "admin@y4d.com",
+    "skills": ["Management", "Program Coordination"],
+    "program": "Administration",
+    "status": "active"
+  },
+  {
+    "id": 4,
+    "username": "sarah_wilson",
+    "password": "password789",
+    "name": "Sarah Wilson",
+    "role": "student",
+    "email": "sarah.wilson@example.com",
+    "skills": ["UI/UX Design", "Figma", "Adobe Creative Suite"],
+    "program": "Digital Design",
+    "status": "active"
+  },
+  {
+    "id": 5,
+    "username": "mike_johnson",
+    "password": "password321",
+    "name": "Mike Johnson",
+    "role": "mentor",
+    "email": "mike.johnson@example.com",
+    "skills": ["Project Management", "Leadership", "Technical Mentoring"],
+    "program": "Mentorship",
+    "status": "active"
+  }
+]
