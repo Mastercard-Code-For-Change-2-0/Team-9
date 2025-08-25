@@ -95,11 +95,25 @@ const AdminOverview = ({ user }) => {
   };
 
   return (
+<<<<<<< HEAD
     <div className="space-y-6 p-6">
       {/* Admin Header */}
       <div className="bg-white rounded-lg shadow-md p-6 border-l-4 border-blue-500">
         <div className="flex items-center justify-between">
           <h1 className="text-3xl font-bold text-gray-800">ADMIN DASHBOARD</h1>
+=======
+    <div>
+      {/* Welcome Card */}
+      <div className="bg-white rounded-lg shadow overflow-hidden">
+        <div className="bg-indigo-600 px-6 py-4">
+          <h2 className="text-xl font-bold text-white">Welcome back, {user.name}!</h2>
+        </div>
+        <div className="px-6 py-4">
+          <p className="text-gray-600">
+            This is the admin dashboard for the Y4D Career Tracker platform. 
+            Here you can manage users, programs, and view analytics.
+          </p>
+>>>>>>> 1ced364 (4 options updated)
         </div>
       </div>
 

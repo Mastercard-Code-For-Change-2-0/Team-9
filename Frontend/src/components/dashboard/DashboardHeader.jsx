@@ -1,4 +1,3 @@
-
 import React, { useState, useRef, useEffect } from 'react';
 
 // Modal for updating student data
@@ -86,7 +85,7 @@ function EditStudentModal({ student, onClose, onSave }) {
             <label className="block text-gray-700 font-semibold mb-1">First Company</label>
             <input type="text" className="w-full border border-gray-300 rounded-md p-2" value={form.firstCompany} onChange={e => setForm(f => ({ ...f, firstCompany: e.target.value }))} />
           </div>
-          {mode === 'manual' && (
+          {(mode === 'manual' || mode === 'social') && (
             <div className="mb-4 flex items-center">
               <input type="checkbox" id="terms" required className="mr-2" />
               <label htmlFor="terms" className="text-gray-700 text-sm">I agree to the <span className="underline">Terms and Conditions</span></label>
@@ -116,10 +115,68 @@ function EducationalInfoCard({ info }) {
   );
 }
 
+function PasswordModal({ onClose }) {
+  const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const [error, setError] = useState('');
+
+  const handleSubmit = e => {
+    e.preventDefault();
+    if (password !== confirmPassword) {
+      setError('Passwords do not match');
+      return;
+    }
+    setError('');
+    // TODO: handle password change logic here
+    onClose();
+  };
+
+  return (
+    <div className="fixed inset-0 bg-blue-100 bg-opacity-60 flex items-center justify-center z-50">
+      <div className="bg-white rounded-lg shadow-lg p-8 w-full max-w-md">
+        <h2 className="text-xl font-bold text-blue-600 mb-4">Change Password</h2>
+        <form onSubmit={handleSubmit}>
+          <div className="mb-4">
+            <label className="block text-gray-700 font-semibold mb-1">New Password</label>
+            <input type="password" className="w-full border border-gray-300 rounded-md p-2" value={password} onChange={e => setPassword(e.target.value)} required />
+          </div>
+          <div className="mb-4">
+            <label className="block text-gray-700 font-semibold mb-1">Re-enter New Password</label>
+            <input type="password" className="w-full border border-gray-300 rounded-md p-2" value={confirmPassword} onChange={e => setConfirmPassword(e.target.value)} required />
+          </div>
+          {error && <div className="mb-2 text-red-600 text-sm">{error}</div>}
+          <div className="flex justify-end gap-2">
+            <button type="button" className="px-4 py-2 rounded bg-gray-200 text-gray-700 font-semibold" onClick={onClose}>Cancel</button>
+            <button type="submit" className="px-4 py-2 rounded bg-blue-600 text-white font-semibold">Save</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  );
+}
+
+function ConfirmModal({ title, message, onClose, onConfirm }) {
+  return (
+    <div className="fixed inset-0 bg-blue-100 bg-opacity-60 flex items-center justify-center z-50">
+      <div className="bg-white rounded-lg shadow-lg p-8 w-full max-w-md">
+        <h2 className="text-xl font-bold text-blue-600 mb-4">{title}</h2>
+        <p className="mb-6 text-gray-700">{message}</p>
+        <div className="flex justify-end gap-2">
+          <button type="button" className="px-4 py-2 rounded bg-gray-200 text-gray-700 font-semibold" onClick={onClose}>Cancel</button>
+          <button type="button" className="px-4 py-2 rounded bg-blue-600 text-white font-semibold" onClick={onConfirm}>Confirm</button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 const DashboardHeader = ({ title, user, onEdit, onPassword, onDeactivate, onDelete }) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const menuRef = useRef(null);
   const [showEdit, setShowEdit] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
+  const [showDeactivate, setShowDeactivate] = useState(false);
+  const [showDelete, setShowDelete] = useState(false);
   const [student, setStudent] = useState({
   name: user.name,
   phone: '+91 9123456789',
@@ -175,9 +232,9 @@ const DashboardHeader = ({ title, user, onEdit, onPassword, onDeactivate, onDele
                 <div className="absolute right-0 mt-2 bg-white shadow-lg rounded-lg w-56 border border-gray-200 z-10">
                   <ul className="divide-y divide-gray-200">
                     <li className="px-4 py-3 hover:bg-gray-100 cursor-pointer text-blue-600 font-semibold" onClick={() => { setMenuOpen(false); setShowEdit(true); }}>Update Student Data</li>
-                    <li className="px-4 py-3 hover:bg-gray-100 cursor-pointer text-blue-600 font-semibold" onClick={() => { setMenuOpen(false); onPassword && onPassword(); }}>Password Management</li>
-                    <li className="px-4 py-3 hover:bg-gray-100 cursor-pointer text-blue-600 font-semibold" onClick={() => { setMenuOpen(false); onDeactivate && onDeactivate(); }}>Profile Deactivation</li>
-                    <li className="px-4 py-3 hover:bg-gray-100 cursor-pointer text-blue-600 font-semibold" onClick={() => { setMenuOpen(false); onDelete && onDelete(); }}>Profile Deletion</li>
+                    <li className="px-4 py-3 hover:bg-gray-100 cursor-pointer text-blue-600 font-semibold" onClick={() => { setMenuOpen(false); setShowPassword(true); }}>Password Management</li>
+                    <li className="px-4 py-3 hover:bg-gray-100 cursor-pointer text-blue-600 font-semibold" onClick={() => { setMenuOpen(false); setShowDeactivate(true); }}>Profile Deactivation</li>
+                    <li className="px-4 py-3 hover:bg-gray-100 cursor-pointer text-blue-600 font-semibold" onClick={() => { setMenuOpen(false); setShowDelete(true); }}>Profile Deletion</li>
                   </ul>
                 </div>
               )}
@@ -193,9 +250,31 @@ const DashboardHeader = ({ title, user, onEdit, onPassword, onDeactivate, onDele
           onSave={info => { setStudent(info); setShowEdit(false); }}
         />
       )}
+      {/* Password Management Modal */}
+      {showPassword && (
+        <PasswordModal onClose={() => setShowPassword(false)} />
+      )}
+      {/* Profile Deactivation Modal */}
+      {showDeactivate && (
+        <ConfirmModal
+          title="Deactivate Profile"
+          message="Are you sure you want to deactivate your account?"
+          onClose={() => setShowDeactivate(false)}
+          onConfirm={() => { setShowDeactivate(false); onDeactivate && onDeactivate(); }}
+        />
+      )}
+      {/* Profile Deletion Modal */}
+      {showDelete && (
+        <ConfirmModal
+          title="Delete Profile"
+          message="Are you sure you want to delete your account? This action cannot be undone."
+          onClose={() => setShowDelete(false)}
+          onConfirm={() => { setShowDelete(false); onDelete && onDelete(); }}
+        />
+      )}
       {/* Educational Info Card */}
       <EducationalInfoCard info={eduInfo} />
-  </div>
+    </div>
   );
 };
 
