@@ -20,6 +20,8 @@ const userSchema = mongoose.Schema(
       type: String,
     },
 
+
+
     
   },
   {
@@ -52,7 +54,7 @@ userSchema.methods.generateaccesstoken=function(){
 userSchema.methods.generaterefreshtoken=function(){
    return jwt.sign({
         _id:this._id,
-        
+
     },
     process.env.REFRESH_TOKEN_SECRET,
     {
@@ -61,3 +63,5 @@ userSchema.methods.generaterefreshtoken=function(){
     )
 }
 export const User = mongoose.model("User", userSchema);
+
+//for this file give m eteh user.controllers.js file code 
