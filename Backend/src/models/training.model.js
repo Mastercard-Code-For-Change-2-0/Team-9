@@ -1,16 +1,16 @@
 import mongoose, { Schema } from "mongoose";
 
-const educationSchema = mongoose.Schema(
+const trainingSchema = mongoose.Schema(
   {
     Student_id:{
   type:Schema.Types.ObjectId,
         ref:"Student"
     },
 
-   degree:{
-   type: String,
-      required: true,
-   },
+    course_name:{
+        type:String,
+        required:true
+    },
    
     completion_date:{
          type: Date,
@@ -24,4 +24,4 @@ const educationSchema = mongoose.Schema(
   }
 );
 
-export const Education = mongoose.model("Education", educationSchema);
+export const Training = mongoose.model("Training", trainingSchema);
