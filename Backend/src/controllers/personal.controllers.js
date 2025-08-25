@@ -12,7 +12,7 @@ export const createPersonal = async (req, res) => {
 
 export const getAllPersonal = async (req, res) => {
   try {
-    const personals = await Personal.find().populate("Student_id");
+    const personals = await Personal.find();
     res.json(personals);
   } catch (error) {
     res.status(500).json({ error: error.message });
@@ -21,7 +21,7 @@ export const getAllPersonal = async (req, res) => {
 
 export const getPersonalById = async (req, res) => {
   try {
-    const personal = await Personal.findById(req.params.id).populate("Student_id");
+    const personal = await Personal.findById(req.params.id);
     if (!personal) return res.status(404).json({ error: "Personal not found" });
     res.json(personal);
   } catch (error) {

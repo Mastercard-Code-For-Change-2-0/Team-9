@@ -5,9 +5,9 @@ import {Personal  } from "./personal.model.js";
 
 const userSchema = mongoose.Schema(
   {
-    Student_id: {
-      type: Schema.Types.ObjectId,
-      ref: "Student"
+    Student_id:{
+  type:Schema.Types.ObjectId,
+        ref:"Personal"
     },
     userName: {
       type: String,

@@ -2,10 +2,7 @@ import mongoose, { Schema } from "mongoose";
 
 const personalSchema = mongoose.Schema(
   {
-    Student_id:{
-  type:Schema.Types.ObjectId,
-        ref:"Student"
-    },
+  
    name:{
      type:String,
     required:true
