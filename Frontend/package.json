@@ -11,12 +11,9 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.12",
-<<<<<<< HEAD
     "lucide-react": "^0.541.0",
-=======
     "axios": "^1.11.0",
     "papaparse": "^5.5.3",
->>>>>>> 5e2785eea0cd34e83be0d154fef74e5fb8a7c012
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-router-dom": "^7.8.2",
