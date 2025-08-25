@@ -3,10 +3,10 @@ import jwt from "jsonwebtoken";
 
 export const registerUser = async (req, res) => {
   try {
-    const { userName, password ,role, entity_type} = req.body;
+    const { userName, password, role, entity_type } = req.body;
 
     if (!userName || !password || !role || !entity_type) {
-      return res.status(400).json({ message: "Username and password are required" });
+      return res.status(400).json({ message: "All fields are required" });
     }
 
     const existingUser = await User.findOne({ userName });
@@ -14,7 +14,7 @@ export const registerUser = async (req, res) => {
       return res.status(409).json({ message: "Username already exists" });
     }
 
-    const newUser = new User({ userName, password });
+    const newUser = new User({ userName, password, role, entity_type });
     await newUser.save();
 
     return res.status(201).json({
@@ -22,9 +22,11 @@ export const registerUser = async (req, res) => {
       user: { id: newUser._id, userName: newUser.userName },
     });
   } catch (error) {
+    console.error("❌ Register error:", error);   // log full error
     return res.status(500).json({ message: "Internal Server Error" });
   }
 };
+
 
 export const loginUser = async (req, res) => {
   try {
