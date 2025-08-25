@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import LoginPage from './pages/LoginPage';
 import LandingPage from './pages/LandingPage';
 import Dashboard from './pages/Dashboard';
+import StudentDashboard from './components/dashboard/StudentDashboard';
 import './App.css';
 
 // Protected Route component
@@ -25,6 +26,7 @@ function App() {
             </ProtectedRoute>
           }
         />
+        <Route path="/student-dashboard" element={<StudentDashboard />} />
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </Router>
