@@ -22,6 +22,20 @@ mongoose.connect(process.env.MONGO_URI, {
   process.exit(1);
 });
 
+
+const studentRoutes = require("./src/routes/student.routes.js");
+const careerRoutes = require("./src/routes/career.routes.js");
+const organisationRoutes = require("./src/routes/organisation.routes.js");
+const personalRoutes = require("./src/routes/personal.routes.js");
+const userRoutes = require("./src/routes/user.routes.js");
+
+
+app.use("/api/students", studentRoutes);
+app.use("/api/careers", careerRoutes);
+app.use("/api/organisations", organisationRoutes);
+app.use("/api/personal", personalRoutes);
+app.use("/api/users", userRoutes);
+
 // Root test endpoint
 app.get('/', (req, res) => {
   res.send("Hello from Backend API 🚀");

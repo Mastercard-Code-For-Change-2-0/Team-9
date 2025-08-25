@@ -16,3 +16,6 @@ router.put("/:id", updateEducation);
 router.delete("/:id", deleteEducation);
 
 export default router;
+
+
+
