@@ -28,6 +28,12 @@ const LandingPage = () => {
               >
                 Login
               </button>
+              <button
+                onClick={() => navigate('/admin')}
+                className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 py-2 rounded-lg font-medium hover:from-blue-700 hover:to-indigo-700 transition-all transform hover:scale-105 shadow-lg"
+              >
+                Admin Dashboard
+              </button>
             </div>
           </div>
         </nav>
