@@ -1,8 +1,14 @@
 import mongoose, { Schema } from "mongoose";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
+import { Student } from "./beneficiary.model.js";
 const userSchema = mongoose.Schema(
   {
+    Student_id:{
+  type:Schema.Types.ObjectId,
+        ref:"Student"
+    },
+
     userName: {
       type: String,
       required: true,
@@ -19,8 +25,15 @@ const userSchema = mongoose.Schema(
     refreshToken: {
       type: String,
     },
+    role:{
+        type: String,
+      required: true,
+    },
+    entity_type:{
+        type:String,
+        required:true
+    }
 
-    
   },
   {
     timestamps: true,
@@ -39,8 +52,8 @@ userSchema.methods.isPasswordCorrect=async function(password){
 userSchema.methods.generateaccesstoken=function(){
   return  jwt.sign({
         _id:this._id,
-        Email:this.Email,
-        fullName:this.fullName,
+       
+        
         userName:this.userName
     },
     process.env.ACCESS_TOKEN_SECRET,
