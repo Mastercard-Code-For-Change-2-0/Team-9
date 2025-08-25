@@ -63,7 +63,7 @@ const StudentOverview = ({ user }) => {
           </div>
         </div>
 
-        {/* (4) Placements */}
+        {/* (3) Placements */}
         <div className="bg-white rounded-lg shadow p-4 md:p-6">
           <div className="flex items-center">
             <div className="p-3 rounded-full bg-purple-100 text-purple-800">
@@ -79,19 +79,20 @@ const StudentOverview = ({ user }) => {
           </div>
         </div>
 
-      {/* Educational Info Card - only on Overview */}
-      <div className="bg-white rounded-lg shadow p-4 md:p-6">
-        <h2 className="text-lg font-bold text-[#ef6022] mb-3 md:mb-4">Educational Info</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4 text-gray-700">
-          <div><span className="font-semibold">First Company Joined:</span> FirstStep Ltd</div>
-          <div><span className="font-semibold">Role at First Company:</span> Trainee</div>
-          <div><span className="font-semibold">Year Joined:</span> 2023</div>
-          <div><span className="font-semibold">Current Company:</span> Acme Corp</div>
-          <div><span className="font-semibold">Current Role:</span> Business Analyst</div>
-          <div><span className="font-semibold">Joining Date:</span> 2024-01-10</div>
+        {/* (4) Educational Info */}
+        <div className="bg-white rounded-lg shadow p-4 md:p-6">
+          <h2 className="text-lg font-bold text-[#ef6022] mb-3 md:mb-4">Educational Info</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4 text-gray-700">
+            <div><span className="font-semibold">First Company Joined:</span> FirstStep Ltd</div>
+            <div><span className="font-semibold">Role at First Company:</span> Trainee</div>
+            <div><span className="font-semibold">Year Joined:</span> 2023</div>
+            <div><span className="font-semibold">Current Company:</span> Acme Corp</div>
+            <div><span className="font-semibold">Current Role:</span> Business Analyst</div>
+            <div><span className="font-semibold">Joining Date:</span> 2024-01-10</div>
+          </div>
         </div>
-      </div>
-        {/* (6) Career Progress */}
+
+        {/* (5) Career Progress */}
         <div className="bg-white rounded-lg shadow p-6">
           <div className="flex items-center">
             <div className="p-3 rounded-full bg-red-100 text-red-800">
@@ -108,12 +109,10 @@ const StudentOverview = ({ user }) => {
         </div>
       </div>
 
-     
-
       {/* Quick Actions */}
-      <div className="bg-white rounded-lg shadow p-6">
-        <h3 className="text-lg font-medium text-gray-800 mb-4">Quick Actions</h3>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <div className="bg-white rounded-lg shadow p-6 mt-2">
+        <h3 className="text-lg font-medium text-gray-800 mb-2">Quick Actions</h3>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
           <button className="flex flex-col items-center p-4 bg-blue-50 rounded-lg hover:bg-blue-100 transition">
             <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-blue-600 mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
