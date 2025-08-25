@@ -25,3 +25,4 @@ const trainingSchema = mongoose.Schema(
 );
 
 export const Training = mongoose.model("Training", trainingSchema);
+

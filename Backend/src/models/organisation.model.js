@@ -34,4 +34,5 @@ const orgSchema = mongoose.Schema(
   }
 );
 
-export const Organisation = mongoose.model("Career", orgSchema);
+
+export const Organisation = mongoose.model("Organisation", orgSchema);
