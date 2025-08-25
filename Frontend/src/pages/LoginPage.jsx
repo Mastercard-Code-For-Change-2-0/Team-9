@@ -49,8 +49,8 @@ const LoginPage = () => {
   };
 
   const demoUsers = [
-    { username: 'john_doe', password: 'password123', name: 'John (Student)' },
-    { username: 'jane_smith', password: 'password456', name: 'Jane (Student)' },
+    { username: 'Paramjeet', password: 'password123', name: 'Param (Student)' },
+    { username: 'Ajay', password: 'password456', name: 'Ajay (Student)' },
     { username: 'admin', password: 'admin123', name: 'Admin' },
     // { username: 'mike_johnson', password: 'password321', name: 'Mike (Mentor)' }
   ];
