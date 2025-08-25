@@ -7,9 +7,9 @@ const LandingPage = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50">
-      {/* Header Navigation */}
-      <header className="bg-white shadow-lg">
-        <nav className="max-w-7xl mx-auto px-6 py-4">
+    {/* Header Navigation */}
+  <header className="bg-white shadow-lg">
+  <nav className="max-w-7xl mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             {/* Logo */}
             <div className="flex items-center space-x-3">
@@ -39,7 +39,7 @@ const LandingPage = () => {
       </header>
 
       {/* Main Content */}
-      <main className="max-w-7xl mx-auto px-6 py-12">
+  <main className="max-w-7xl mx-auto px-6 py-12">
         {/* Career Tracker Section */}
         <div className="text-center mb-12">
           <h1 className="text-4xl lg:text-5xl font-bold text-gray-800 mb-4">
@@ -51,7 +51,7 @@ const LandingPage = () => {
         </div>
 
         {/* Dashboard Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {/* Recent Opportunities */}
           <div className="bg-white rounded-2xl shadow-xl p-8 hover:shadow-2xl transition-all transform hover:-translate-y-2 border border-gray-100">
             <div className="flex items-center justify-between mb-6">
@@ -241,7 +241,7 @@ const LandingPage = () => {
         </div>
 
         {/* Call to Action */}
-        <div className="text-center bg-gradient-to-r from-blue-600 to-indigo-600 rounded-3xl p-12 text-white">
+  <div className="text-center bg-gradient-to-r from-blue-600 to-indigo-600 rounded-3xl p-12 text-white">
           <h2 className="text-3xl lg:text-4xl font-bold mb-4">
             Ready to Transform Youth Career Development?
           </h2>
