@@ -5,6 +5,7 @@ import LandingPage from './pages/LandingPage';
 import Dashboard from './pages/Dashboard';
 import StudentDashboard from './components/dashboard/StudentDashboard';
 import './App.css';
+import AdminDashboard from './components/dashboard/AdminDashboard';
 
 // Protected Route component
 const ProtectedRoute = ({ children }) => {
@@ -18,6 +19,7 @@ function App() {
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/login" element={<LoginPage />} />
+        <Route path="/admin" element={<AdminDashboard />} />
         <Route 
           path="/dashboard/*" 
           element={
