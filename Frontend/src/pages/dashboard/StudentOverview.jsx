@@ -11,7 +11,7 @@ const StudentOverview = ({ user }) => {
   };
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-4">
       {/* Welcome Card */}
       <div className="bg-white rounded-lg shadow overflow-hidden">
         <div className="bg-indigo-600 px-6 py-4">
@@ -30,7 +30,7 @@ const StudentOverview = ({ user }) => {
       </div>
 
       {/* Entity Status Grid - Core 6 entities */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {/* (1) Documents */}
         <div className="bg-white rounded-lg shadow p-6">
           <div className="flex items-center">
@@ -100,9 +100,9 @@ const StudentOverview = ({ user }) => {
      
 
       {/* Quick Actions */}
-      <div className="bg-white rounded-lg shadow p-6">
-        <h3 className="text-lg font-medium text-gray-800 mb-4">Quick Actions</h3>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <div className="bg-white rounded-lg shadow p-6 mt-2">
+        <h3 className="text-lg font-medium text-gray-800 mb-2">Quick Actions</h3>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
           <button className="flex flex-col items-center p-4 bg-blue-50 rounded-lg hover:bg-blue-100 transition">
             <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-blue-600 mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />

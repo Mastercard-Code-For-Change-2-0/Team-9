@@ -58,9 +58,13 @@ export const loginUser = async (req, res) => {
       refreshToken,
     });
   } catch (error) {
+    console.error("❌ Login error full details:", error);  // <-- log entire error
+    console.error("❌ Error name:", error.name);
+    console.error("❌ Error message:", error.message);
     return res.status(500).json({ message: "Internal Server Error" });
   }
 };
+
 
 export const logoutUser = async (req, res) => {
   try {

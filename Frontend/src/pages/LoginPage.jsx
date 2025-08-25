@@ -49,9 +49,10 @@ const LoginPage = () => {
   };
 
   const demoUsers = [
-    { username: 'john_doe', password: 'password123', name: 'John (Student)' },
-    { username: 'jane_smith', password: 'password456', name: 'Jane (Student)' },
+    { username: 'Param', password: 'pass123', name: 'Param (Student)' },
+    { username: 'Ajay', password: 'pass123', name: 'Ajay (Student)' },
     { username: 'admin', password: 'admin123', name: 'Admin' },
+    { username: 'clerk', password: 'clerk123', name: 'Clerk (Demo)' },
     // { username: 'mike_johnson', password: 'password321', name: 'Mike (Mentor)' }
   ];
 
@@ -84,7 +85,7 @@ const LoginPage = () => {
                   className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md bg-white focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                 >
                   <option value="student">Student</option>
-                  <option value="mentor">Mentor</option>
+                  <option value="clerk">Clerk</option>
                   <option value="admin">Admin</option>
                 </select>
               </div>

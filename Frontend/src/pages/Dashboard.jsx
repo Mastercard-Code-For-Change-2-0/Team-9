@@ -3,6 +3,7 @@ import { Navigate } from 'react-router-dom';
 import StudentDashboard from './dashboard/StudentDashboard';
 import MentorDashboard from './dashboard/MentorDashboard';
 import AdminDashboard from './dashboard/AdminDashboard';
+import ClerkDashboard from './dashboard/ClerkDashboard';
 
 const Dashboard = () => {
   const [user, setUser] = useState(null);
@@ -44,6 +45,8 @@ const Dashboard = () => {
       return <MentorDashboard user={user} />;
     case 'admin':
       return <AdminDashboard user={user} />;
+    case 'clerk':
+      return <ClerkDashboard user={user} />;
     default:
       // Fallback for unknown user roles
       return (
