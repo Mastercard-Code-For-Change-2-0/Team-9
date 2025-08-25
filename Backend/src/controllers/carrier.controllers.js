@@ -1,4 +1,4 @@
-import { Career } from "../models/career.model.js";
+import { Career } from "../models/carriers.model.js";
 
 export const createCareer = async (req, res) => {
   try {

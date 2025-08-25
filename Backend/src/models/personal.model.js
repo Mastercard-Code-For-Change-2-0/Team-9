@@ -1,6 +1,6 @@
 import mongoose, { Schema } from "mongoose";
 
-const orgSchema = mongoose.Schema(
+const personalSchema = mongoose.Schema(
   {
     Student_id:{
   type:Schema.Types.ObjectId,
@@ -42,4 +42,4 @@ linkedin:{
   }
 );
 
-export const Organisation = mongoose.model("Career", orgSchema);
+export const Personal = mongoose.model("Personal", personalSchema);

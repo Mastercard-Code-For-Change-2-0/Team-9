@@ -1,4 +1,4 @@
-import { Personal } from "../models/personal.models.js";
+import { Personal } from "../models/personal.model.js";
 
 export const createPersonal = async (req, res) => {
   try {

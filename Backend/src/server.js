@@ -1,24 +1,23 @@
-require("dotenv").config();// server.js
-const app = require('./app'); 
+import dotenv from "dotenv";
+import mongoose from "mongoose";
+import express from "express";
+import cors from "cors";
 
-const port = process.env.PORT || 3001;
+import app from "./app.js";
 
-// Check if Google Gemini API key is configured
-if (!process.env.GOOGLE_GEMINI_KEY) {
-  console.error("ERROR: GOOGLE_GEMINI_KEY is not set in .env file");
-  process.exit(1);
-}
+dotenv.config();
 
-const server = app.listen(port, () => {
-  console.log(`✅ Server is running on http://localhost:${port}`);
-  console.log(`API endpoint available at http://localhost:${port}/ai/get-review`);
-});
+const PORT = process.env.PORT || 3001;
 
-server.on("error", (error) => {
-  if (error.code === "EADDRINUSE") {
-    console.error(`Port ${port} is already in use. Please use a different port.`);
-  } else {
-    console.error("Error starting server:", error);
-  }
+mongoose.connect(process.env.MONGO_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+})
+.then(() => {
+  console.log("✅ MongoDB connected successfully");
+  app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
+})
+.catch(err => {
+  console.error("❌ MongoDB connection error:", err);
   process.exit(1);
 });

@@ -1,4 +1,4 @@
-import { Organisation } from "../models/organization.model.js";
+import { Organisation } from "../models/organisation.model.js";
 
 export const createOrganisation = async (req, res) => {
   try {

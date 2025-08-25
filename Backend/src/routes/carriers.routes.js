@@ -5,7 +5,7 @@ import {
   getCareerById,
   updateCareer,
   deleteCareer
-} from "../controllers/career.controller.js";
+} from "../controllers/carrier.controllers.js";
 
 const router = express.Router();
 
