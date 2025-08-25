@@ -30,7 +30,7 @@ function EditStudentModal({ student, onClose, onSave }) {
     });
   };
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-30 flex items-center justify-center z-50">
+  <div className="fixed inset-0 bg-blue-100 bg-opacity-60 flex items-center justify-center z-50">
       <div className="bg-white rounded-lg shadow-lg p-8 w-full max-w-md max-h-[90vh] overflow-y-auto">
         <h2 className="text-xl font-bold text-blue-600 mb-4">Update Student Data</h2>
         <div className="flex gap-4 mb-6">
@@ -45,43 +45,53 @@ function EditStudentModal({ student, onClose, onSave }) {
         </div>
         <div className="mb-4 text-center text-sm text-gray-500">Choose an option above to update your profile data.</div>
         <form onSubmit={e => { e.preventDefault(); onSave(form); }}>
-          {/* ...existing code... */}
+          {mode === 'social' && (
+            <div className="mb-4 text-gray-600 text-sm font-mono bg-gray-100 rounded p-2">
+              You preferred Linkedin and this is your fetched data
+            </div>
+          )}
           <div className="mb-4">
             <label className="block text-gray-700 font-semibold mb-1">Student Name</label>
-            <input type="text" className="w-full border border-gray-300 rounded-md p-2" value={form.name} onChange={e => setForm(f => ({ ...f, name: e.target.value }))} />
+            <input type="text" className={`w-full border border-gray-300 rounded-md p-2 ${mode === 'social' ? 'bg-gray-200 text-gray-700 font-mono' : ''}`} value={form.name} onChange={e => setForm(f => ({ ...f, name: e.target.value }))} disabled={mode === 'social'} />
           </div>
           <div className="mb-4">
             <label className="block text-gray-700 font-semibold mb-1">Phone No</label>
-            <input type="text" className="w-full border border-gray-300 rounded-md p-2" value={form.phone} onChange={e => setForm(f => ({ ...f, phone: e.target.value }))} />
+            <input type="text" className={`w-full border border-gray-300 rounded-md p-2 ${mode === 'social' ? 'bg-gray-200 text-gray-700 font-mono' : ''}`} value={form.phone} onChange={e => setForm(f => ({ ...f, phone: e.target.value }))} disabled={mode === 'social'} />
           </div>
           <div className="mb-4">
             <label className="block text-gray-700 font-semibold mb-1">Email</label>
-            <input type="email" className="w-full border border-gray-300 rounded-md p-2" value={form.email} onChange={e => setForm(f => ({ ...f, email: e.target.value }))} />
+            <input type="email" className={`w-full border border-gray-300 rounded-md p-2 ${mode === 'social' ? 'bg-gray-200 text-gray-700 font-mono' : ''}`} value={form.email} onChange={e => setForm(f => ({ ...f, email: e.target.value }))} disabled={mode === 'social'} />
           </div>
           <div className="mb-4">
             <label className="block text-gray-700 font-semibold mb-1">LinkedIn ID</label>
-            <input type="text" className="w-full border border-gray-300 rounded-md p-2" value={form.linkedin} onChange={e => setForm(f => ({ ...f, linkedin: e.target.value }))} />
+            <input type="text" className={`w-full border border-gray-300 rounded-md p-2 ${mode === 'social' ? 'bg-gray-200 text-gray-700 font-mono' : ''}`} value={form.linkedin} onChange={e => setForm(f => ({ ...f, linkedin: e.target.value }))} disabled={mode === 'social'} />
           </div>
           <div className="mb-4">
             <label className="block text-gray-700 font-semibold mb-1">Address</label>
-            <input type="text" className="w-full border border-gray-300 rounded-md p-2" value={form.address} onChange={e => setForm(f => ({ ...f, address: e.target.value }))} />
+            <input type="text" className={`w-full border border-gray-300 rounded-md p-2 ${mode === 'social' ? 'bg-gray-200 text-gray-700 font-mono' : ''}`} value={form.address} onChange={e => setForm(f => ({ ...f, address: e.target.value }))} disabled={mode === 'social'} />
           </div>
           <div className="mb-4">
             <label className="block text-gray-700 font-semibold mb-1">Family Income</label>
-            <input type="text" className="w-full border border-gray-300 rounded-md p-2" value={form.familyIncome} onChange={e => setForm(f => ({ ...f, familyIncome: e.target.value }))} />
+            <input type="text" className={`w-full border border-gray-300 rounded-md p-2 ${mode === 'social' ? 'bg-gray-200 text-gray-700 font-mono' : ''}`} value={form.familyIncome} onChange={e => setForm(f => ({ ...f, familyIncome: e.target.value }))} disabled={mode === 'social'} />
           </div>
           <div className="mb-4">
             <label className="block text-gray-700 font-semibold mb-1">Current Company</label>
-            <input type="text" className="w-full border border-gray-300 rounded-md p-2" value={form.currentCompany} onChange={e => setForm(f => ({ ...f, currentCompany: e.target.value }))} />
+            <input type="text" className={`w-full border border-gray-300 rounded-md p-2 ${mode === 'social' ? 'bg-gray-200 text-gray-700 font-mono' : ''}`} value={form.currentCompany} onChange={e => setForm(f => ({ ...f, currentCompany: e.target.value }))} />
           </div>
           <div className="mb-4">
             <label className="block text-gray-700 font-semibold mb-1">Joining Date</label>
-            <input type="date" className="w-full border border-gray-300 rounded-md p-2" value={form.joiningDate} onChange={e => setForm(f => ({ ...f, joiningDate: e.target.value }))} />
+            <input type="date" className={`w-full border border-gray-300 rounded-md p-2 ${mode === 'social' ? 'bg-gray-200 text-gray-700 font-mono' : ''}`} value={form.joiningDate} onChange={e => setForm(f => ({ ...f, joiningDate: e.target.value }))} disabled={mode === 'social'} />
           </div>
           <div className="mb-4">
             <label className="block text-gray-700 font-semibold mb-1">First Company</label>
             <input type="text" className="w-full border border-gray-300 rounded-md p-2" value={form.firstCompany} onChange={e => setForm(f => ({ ...f, firstCompany: e.target.value }))} />
           </div>
+          {mode === 'manual' && (
+            <div className="mb-4 flex items-center">
+              <input type="checkbox" id="terms" required className="mr-2" />
+              <label htmlFor="terms" className="text-gray-700 text-sm">I agree to the <span className="underline">Terms and Conditions</span></label>
+            </div>
+          )}
           <div className="flex justify-end gap-2">
             <button type="button" className="px-4 py-2 rounded bg-gray-200 text-gray-700 font-semibold" onClick={onClose}>Cancel</button>
             <button type="submit" className="px-4 py-2 rounded bg-blue-600 text-white font-semibold">Save</button>
@@ -144,7 +154,7 @@ const DashboardHeader = ({ title, user, onEdit, onPassword, onDeactivate, onDele
   }, [menuOpen]);
 
   return (
-    <>
+    <div className="min-h-screen bg-blue-50">
       <header className="bg-white shadow-sm px-6 py-4 flex items-center justify-between">
         <h1 className="text-2xl font-bold text-gray-800">{title}</h1>
         <div className="flex items-center space-x-4">
@@ -185,7 +195,7 @@ const DashboardHeader = ({ title, user, onEdit, onPassword, onDeactivate, onDele
       )}
       {/* Educational Info Card */}
       <EducationalInfoCard info={eduInfo} />
-    </>
+  </div>
   );
 };
 
