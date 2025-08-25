@@ -4,11 +4,9 @@ import {
   loginUser,
   refreshAccessToken,
   logoutUser,
-  getAllUsers,
-  getUserById,
-  updateUser,
-  deleteUser
-} from "../controllers/user.controllers.js";
+ 
+
+} from "../controllers/user.controller.js";
 
 const router = express.Router();
 
@@ -17,9 +15,8 @@ router.post("/login", loginUser);
 router.post("/refresh-token", refreshAccessToken);
 router.post("/logout", logoutUser);
 
-router.get("/", getAllUsers);
-router.get("/:id", getUserById);
-router.put("/:id", updateUser);
-router.delete("/:id", deleteUser);
+
+
+
 
 export default router;

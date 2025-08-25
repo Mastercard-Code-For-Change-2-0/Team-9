@@ -3,9 +3,9 @@ import jwt from "jsonwebtoken";
 
 export const registerUser = async (req, res) => {
   try {
-    const { userName, password } = req.body;
+    const { userName, password ,role, entity_type} = req.body;
 
-    if (!userName || !password) {
+    if (!userName || !password || !role || !entity_type) {
       return res.status(400).json({ message: "Username and password are required" });
     }
 

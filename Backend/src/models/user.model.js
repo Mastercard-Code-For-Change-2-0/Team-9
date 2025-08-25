@@ -1,7 +1,7 @@
 import mongoose, { Schema } from "mongoose";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
-import { Student } from "./beneficiary.model.js";
+import {Personal  } from "./personal.model.js";
 
 const userSchema = mongoose.Schema(
   {
