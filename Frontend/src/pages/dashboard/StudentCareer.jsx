@@ -10,11 +10,11 @@ const StudentCareer = ({ user }) => {
   ];
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-4 md:space-y-6">
       {/* Career Progress Overview */}
-      <div className="bg-white rounded-lg shadow p-6">
+      <div className="bg-white rounded-lg shadow p-4 md:p-6">
         <h2 className="text-xl font-semibold text-gray-800 mb-6">Career Progress</h2>
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-6">
       
           <div className="text-center">
             <div className="text-3xl font-bold text-blue-600">3</div>
@@ -34,7 +34,7 @@ const StudentCareer = ({ user }) => {
       {/* Placements Section */}
       <div className="bg-white rounded-lg shadow">
         <div className="border-b border-gray-200">
-          <nav className="flex space-x-8 px-6" aria-label="Tabs">
+          <nav className="flex space-x-6 md:space-x-8 px-4 md:px-6" aria-label="Tabs">
             <button
               onClick={() => setActiveTab('placements')}
               className={`py-4 px-1 border-b-2 font-medium text-sm ${
@@ -48,7 +48,7 @@ const StudentCareer = ({ user }) => {
           </nav>
         </div>
 
-        <div className="p-6">
+        <div className="p-4 md:p-6">
           {activeTab === 'placements' && (
             <div className="space-y-4">
               <div className="flex justify-between items-center">
@@ -62,22 +62,22 @@ const StudentCareer = ({ user }) => {
                 <table className="min-w-full divide-y divide-gray-200">
                   <thead className="bg-gray-50">
                     <tr>
-                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Company</th>
-                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Position</th>
-                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Status</th>
-                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Salary</th>
-                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Actions</th>
+                      <th className="px-4 md:px-6 py-2 md:py-3 text-left text-xs font-medium text-gray-500 uppercase">Company</th>
+                      <th className="px-4 md:px-6 py-2 md:py-3 text-left text-xs font-medium text-gray-500 uppercase">Position</th>
+                      <th className="px-4 md:px-6 py-2 md:py-3 text-left text-xs font-medium text-gray-500 uppercase">Status</th>
+                      <th className="px-4 md:px-6 py-2 md:py-3 text-left text-xs font-medium text-gray-500 uppercase">Salary</th>
+                      <th className="px-4 md:px-6 py-2 md:py-3 text-left text-xs font-medium text-gray-500 uppercase">Actions</th>
                     </tr>
                   </thead>
                   <tbody className="bg-white divide-y divide-gray-200">
                     {placements.map((placement) => (
                       <tr key={placement.id}>
-                        <td className="px-6 py-4 whitespace-nowrap">
+                        <td className="px-4 md:px-6 py-3 md:py-4 whitespace-nowrap">
                           <div className="text-sm font-medium text-gray-900">{placement.company}</div>
                           <div className="text-sm text-gray-500">Applied: {placement.appliedDate}</div>
                         </td>
-                        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{placement.position}</td>
-                        <td className="px-6 py-4 whitespace-nowrap">
+                        <td className="px-4 md:px-6 py-3 md:py-4 whitespace-nowrap text-sm text-gray-900">{placement.position}</td>
+                        <td className="px-4 md:px-6 py-3 md:py-4 whitespace-nowrap">
                           <span className={`px-2 py-1 text-xs rounded-full ${
                             placement.status === 'Offer Received' ? 'bg-green-100 text-green-800' :
                             placement.status === 'Interview Scheduled' ? 'bg-blue-100 text-blue-800' :
@@ -86,8 +86,8 @@ const StudentCareer = ({ user }) => {
                             {placement.status}
                           </span>
                         </td>
-                        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{placement.salary}</td>
-                        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                        <td className="px-4 md:px-6 py-3 md:py-4 whitespace-nowrap text-sm text-gray-900">{placement.salary}</td>
+                        <td className="px-4 md:px-6 py-3 md:py-4 whitespace-nowrap text-sm font-medium">
                           <button className="text-indigo-600 hover:text-indigo-900">View Details</button>
                         </td>
                       </tr>

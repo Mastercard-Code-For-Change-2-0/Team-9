@@ -175,7 +175,7 @@ const StudentDashboard = () => {
   return (
     <div className="min-h-screen bg-gray-50 font-sans">
       {/* Top Bar */}
-      <div className="flex justify-between items-center px-8 py-6 bg-[#ef6022] text-white shadow">
+      <div className="flex justify-between items-center px-6 py-4 bg-[#ef6022] text-white shadow">
         <div className="text-2xl font-bold">Y4D Career Tracker</div>
         <StudentProfileMenu
           onEdit={() => setShowEdit(true)}
@@ -186,9 +186,9 @@ const StudentDashboard = () => {
       </div>
 
       {/* Main Dashboard */}
-      <div className="max-w-5xl mx-auto mt-10 grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className="max-w-5xl mx-auto mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
         {/* Profile Card */}
-        <div className="bg-white rounded-lg shadow-md p-8 border border-gray-200 flex flex-col items-center">
+        <div className="bg-white rounded-lg shadow-md p-6 border border-gray-200 flex flex-col items-center">
           <img src={student.photo} alt="Profile" className="w-24 h-24 rounded-full mb-4 border-4 border-[#ef6022]" />
           <div className="text-xl font-bold text-[#ef6022]">{student.name}</div>
           <div className="text-gray-600 mb-2">{student.contact}</div>
@@ -197,7 +197,7 @@ const StudentDashboard = () => {
         </div>
 
         {/* Personal Info */}
-        <div className="bg-white rounded-lg shadow-md p-8 border border-gray-200 mb-8">
+        <div className="bg-white rounded-lg shadow-md p-6 border border-gray-200">
           <div className="flex justify-between items-center mb-4">
             <h2 className="text-lg font-bold text-[#ef6022]">Personal Information</h2>
             <button className="text-[#ef6022] font-semibold px-3 py-1 border border-[#ef6022] rounded hover:bg-[#ef6022] hover:text-white" onClick={() => setShowEdit(true)}>Update</button>
@@ -211,18 +211,7 @@ const StudentDashboard = () => {
             <div><span className="font-semibold">Family Income:</span> 500000</div>
           </div>
         </div>
-        {/* Educational Info Card */}
-        <div className="bg-white rounded-lg shadow-md p-8 border border-gray-200">
-          <h2 className="text-lg font-bold text-[#ef6022] mb-4">Educational Info</h2>
-          <div className="grid grid-cols-2 gap-4 text-gray-700">
-            <div><span className="font-semibold">First Company Joined:</span> {student.firstPlacement.company}</div>
-            <div><span className="font-semibold">Role at First Company:</span> {student.firstPlacement.role}</div>
-            <div><span className="font-semibold">Year Joined:</span> {student.firstPlacement.year}</div>
-            <div><span className="font-semibold">Current Company:</span> {student.company}</div>
-            <div><span className="font-semibold">Current Role:</span> {student.degree}</div>
-            <div><span className="font-semibold">Joining Date:</span> {student.joiningDate}</div>
-          </div>
-        </div>
+        
       </div>
 
       {/* Feedback Form */}

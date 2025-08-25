@@ -101,19 +101,7 @@ function EditStudentModal({ student, onClose, onSave }) {
   );
 }
 
-// Educational Info Card
-function EducationalInfoCard({ info }) {
-  return (
-    <div className="bg-white rounded-lg shadow-md p-6 border border-gray-200 mt-4 max-w-xl mx-auto">
-      <h2 className="text-lg font-bold text-blue-600 mb-4">Educational Info</h2>
-      <div className="grid grid-cols-2 gap-4 text-gray-700">
-        <div><span className="font-semibold">First Company Joined:</span> {info.firstCompany}</div>
-        <div><span className="font-semibold">Current Company:</span> {info.currentCompany}</div>
-        <div><span className="font-semibold">Joining Date:</span> {info.joiningDate}</div>
-      </div>
-    </div>
-  );
-}
+// (Removed shared EducationalInfoCard to avoid showing on all dashboards)
 
 function PasswordModal({ onClose }) {
   const [password, setPassword] = useState('');
@@ -188,14 +176,7 @@ const DashboardHeader = ({ title, user, onEdit, onPassword, onDeactivate, onDele
   joiningDate: '2024-01-10',
   firstCompany: 'FirstStep Ltd',
   });
-  const [eduInfo, setEduInfo] = useState({
-    firstCompany: 'FirstStep Ltd',
-    firstRole: 'Trainee',
-    firstYear: '2023',
-    currentCompany: 'Acme Corp',
-    currentRole: 'Business Analyst',
-    joiningDate: '2024-01-10',
-  });
+  // (Removed eduInfo state)
 
   // Close dropdown on outside click
   useEffect(() => {
@@ -211,7 +192,7 @@ const DashboardHeader = ({ title, user, onEdit, onPassword, onDeactivate, onDele
   }, [menuOpen]);
 
   return (
-    <div className="min-h-screen bg-blue-50">
+    <div>
       <header className="bg-white shadow-sm px-6 py-4 flex items-center justify-between">
         <h1 className="text-2xl font-bold text-gray-800">{title}</h1>
         <div className="flex items-center space-x-4">
@@ -272,8 +253,7 @@ const DashboardHeader = ({ title, user, onEdit, onPassword, onDeactivate, onDele
           onConfirm={() => { setShowDelete(false); onDelete && onDelete(); }}
         />
       )}
-      {/* Educational Info Card */}
-      <EducationalInfoCard info={eduInfo} />
+      {/* No shared educational info rendered here */}
     </div>
   );
 };

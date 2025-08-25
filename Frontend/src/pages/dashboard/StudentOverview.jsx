@@ -11,10 +11,10 @@ const StudentOverview = ({ user }) => {
   };
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-4 md:space-y-6">
       {/* Welcome Card */}
       <div className="bg-white rounded-lg shadow overflow-hidden">
-        <div className="bg-indigo-600 px-6 py-4">
+        <div className="bg-indigo-600 px-4 md:px-6 py-3 md:py-4">
           <div className="flex items-center justify-between">
             <h2 className="text-xl font-bold text-white">Welcome back, {user.name}!</h2>
             <span className="bg-indigo-800 text-indigo-200 py-1 px-3 rounded-full text-sm">
@@ -22,7 +22,7 @@ const StudentOverview = ({ user }) => {
             </span>
           </div>
         </div>
-        <div className="px-6 py-4">
+        <div className="px-4 md:px-6 py-3 md:py-4">
           <p className="text-gray-600">
             Track your documents, career progress, and stay updated with notifications.
           </p>
@@ -30,9 +30,9 @@ const StudentOverview = ({ user }) => {
       </div>
 
       {/* Entity Status Grid - Core 6 entities */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
         {/* (1) Documents */}
-        <div className="bg-white rounded-lg shadow p-6">
+        <div className="bg-white rounded-lg shadow p-4 md:p-6">
           <div className="flex items-center">
             <div className="p-3 rounded-full bg-blue-100 text-blue-800">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -48,7 +48,7 @@ const StudentOverview = ({ user }) => {
         </div>
 
         {/* (2) Digital Signatures */}
-        <div className="bg-white rounded-lg shadow p-6">
+        <div className="bg-white rounded-lg shadow p-4 md:p-6">
           <div className="flex items-center">
             <div className="p-3 rounded-full bg-green-100 text-green-800">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -64,7 +64,7 @@ const StudentOverview = ({ user }) => {
         </div>
 
         {/* (4) Placements */}
-        <div className="bg-white rounded-lg shadow p-6">
+        <div className="bg-white rounded-lg shadow p-4 md:p-6">
           <div className="flex items-center">
             <div className="p-3 rounded-full bg-purple-100 text-purple-800">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -79,7 +79,18 @@ const StudentOverview = ({ user }) => {
           </div>
         </div>
 
-
+      {/* Educational Info Card - only on Overview */}
+      <div className="bg-white rounded-lg shadow p-4 md:p-6">
+        <h2 className="text-lg font-bold text-[#ef6022] mb-3 md:mb-4">Educational Info</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4 text-gray-700">
+          <div><span className="font-semibold">First Company Joined:</span> FirstStep Ltd</div>
+          <div><span className="font-semibold">Role at First Company:</span> Trainee</div>
+          <div><span className="font-semibold">Year Joined:</span> 2023</div>
+          <div><span className="font-semibold">Current Company:</span> Acme Corp</div>
+          <div><span className="font-semibold">Current Role:</span> Business Analyst</div>
+          <div><span className="font-semibold">Joining Date:</span> 2024-01-10</div>
+        </div>
+      </div>
         {/* (6) Career Progress */}
         <div className="bg-white rounded-lg shadow p-6">
           <div className="flex items-center">

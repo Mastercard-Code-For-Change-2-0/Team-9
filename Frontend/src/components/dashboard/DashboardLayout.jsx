@@ -13,7 +13,7 @@ const DashboardLayout = ({ user, navigationItems, title, children }) => {
       <div className="flex-1 flex flex-col">
         <DashboardHeader title={title} user={user} />
         
-        <main className="flex-1 p-6">
+        <main className="flex-1 p-3 md:p-4">
           {children}
         </main>
       </div>

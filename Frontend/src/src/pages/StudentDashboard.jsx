@@ -80,16 +80,16 @@ const StudentDashboard = () => {
   };
 
   return (
-    <div className="max-w-7xl mx-auto p-6 space-y-6">
+    <div className="max-w-7xl mx-auto p-3 md:p-4 space-y-4 md:space-y-6">
       {/* Welcome Section */}
-      <div className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-xl p-6">
+      <div className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-xl p-4 md:p-6">
         <h1 className="text-2xl font-bold mb-2">Welcome back, Pradeep!</h1>
         <p className="text-blue-100">Continue building your career path. You're {progressData.overallProgress}% towards your goals!</p>
       </div>
 
       {/* Stats Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <div className="bg-white rounded-xl shadow-md p-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+        <div className="bg-white rounded-xl shadow-md p-4 md:p-6">
           <div className="flex items-center justify-between">
             <div>
               <p className="text-sm text-gray-600">Overall Progress</p>
@@ -107,7 +107,7 @@ const StudentDashboard = () => {
           </div>
         </div>
 
-        <div className="bg-white rounded-xl shadow-md p-6">
+        <div className="bg-white rounded-xl shadow-md p-4 md:p-6">
           <div className="flex items-center justify-between">
             <div>
               <p className="text-sm text-gray-600">Skills Mastered</p>
@@ -120,7 +120,7 @@ const StudentDashboard = () => {
           <p className="text-sm text-green-600 mt-2">+2 this month</p>
         </div>
 
-        <div className="bg-white rounded-xl shadow-md p-6">
+        <div className="bg-white rounded-xl shadow-md p-4 md:p-6">
           <div className="flex items-center justify-between">
             <div>
               <p className="text-sm text-gray-600">Job Applications</p>
@@ -133,7 +133,7 @@ const StudentDashboard = () => {
           <p className="text-sm text-purple-600 mt-2">{progressData.interviewsScheduled} interviews scheduled</p>
         </div>
 
-        <div className="bg-white rounded-xl shadow-md p-6">
+        <div className="bg-white rounded-xl shadow-md p-4 md:p-6">
           <div className="flex items-center justify-between">
             <div>
               <p className="text-sm text-gray-600">Certifications</p>
@@ -147,9 +147,9 @@ const StudentDashboard = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6">
         {/* Recent Activities */}
-        <div className="bg-white rounded-xl shadow-md p-6">
+        <div className="bg-white rounded-xl shadow-md p-4 md:p-6">
           <h2 className="text-xl font-semibold text-gray-800 mb-4">Recent Activities</h2>
           <div className="space-y-4">
             {recentActivities.map((activity) => (
@@ -176,7 +176,7 @@ const StudentDashboard = () => {
         </div>
 
         {/* Job Recommendations */}
-        <div className="bg-white rounded-xl shadow-md p-6">
+        <div className="bg-white rounded-xl shadow-md p-4 md:p-6">
           <h2 className="text-xl font-semibold text-gray-800 mb-4">Recommended Jobs</h2>
           <div className="space-y-4">
             {jobRecommendations.map((job) => (
@@ -211,9 +211,9 @@ const StudentDashboard = () => {
       </div>
 
       {/* Quick Actions */}
-      <div className="bg-white rounded-xl shadow-md p-6">
+      <div className="bg-white rounded-xl shadow-md p-4 md:p-6">
         <h2 className="text-xl font-semibold text-gray-800 mb-4">Quick Actions</h2>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
           <button 
             onClick={() => navigate('/skills')}
             className="p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow text-center"
