@@ -63,22 +63,6 @@ const StudentOverview = ({ user }) => {
           </div>
         </div>
 
-        {/* (3) Email/SMS Notifications */}
-        <div className="bg-white rounded-lg shadow p-6">
-          <div className="flex items-center">
-            <div className="p-3 rounded-full bg-yellow-100 text-yellow-800">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-              </svg>
-            </div>
-            <div className="ml-4">
-              <h3 className="text-gray-500 text-sm">Notifications</h3>
-              <p className="text-2xl font-bold text-gray-900">{entityStatus.notifications.unread}</p>
-              <p className="text-xs text-gray-500">Unread messages</p>
-            </div>
-          </div>
-        </div>
-
         {/* (4) Placements */}
         <div className="bg-white rounded-lg shadow p-6">
           <div className="flex items-center">
@@ -95,21 +79,6 @@ const StudentOverview = ({ user }) => {
           </div>
         </div>
 
-        {/* (5) Internships */}
-        <div className="bg-white rounded-lg shadow p-6">
-          <div className="flex items-center">
-            <div className="p-3 rounded-full bg-indigo-100 text-indigo-800">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2-2v2m8 0V6a2 2 0 00-2 2H6a2 2 0 00-2-2V4m16 2v10a2 2 0 01-2 2H4a2 2 0 01-2-2V6a2 2 0 012-2h16a2 2 0 012 2z" />
-              </svg>
-            </div>
-            <div className="ml-4">
-              <h3 className="text-gray-500 text-sm">Internships</h3>
-              <p className="text-2xl font-bold text-gray-900">{entityStatus.internships.completed}</p>
-              <p className="text-xs text-gray-500">{entityStatus.internships.applied} applications</p>
-            </div>
-          </div>
-        </div>
 
         {/* (6) Career Progress */}
         <div className="bg-white rounded-lg shadow p-6">
@@ -128,27 +97,7 @@ const StudentOverview = ({ user }) => {
         </div>
       </div>
 
-      {/* Entity Relationships Flow */}
-      <div className="bg-white rounded-lg shadow p-6">
-        <h3 className="text-lg font-medium text-gray-800 mb-4">Entity Relationships</h3>
-        <div className="flex flex-wrap items-center justify-center space-x-4 text-sm">
-          <div className="flex items-center space-x-2">
-            <span className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full">Entity</span>
-            <span className="text-gray-400">→</span>
-            <span className="px-3 py-1 bg-green-100 text-green-800 rounded-full">User</span>
-          </div>
-          <div className="flex items-center space-x-2">
-            <span className="px-3 py-1 bg-purple-100 text-purple-800 rounded-full">Org</span>
-            <span className="text-gray-400">→</span>
-            <span className="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full">Org Admin</span>
-          </div>
-          <div className="flex items-center space-x-2">
-            <span className="px-3 py-1 bg-indigo-100 text-indigo-800 rounded-full">Student</span>
-            <span className="text-gray-400">→</span>
-            <span className="px-3 py-1 bg-red-100 text-red-800 rounded-full">Alumni</span>
-          </div>
-        </div>
-      </div>
+     
 
       {/* Quick Actions */}
       <div className="bg-white rounded-lg shadow p-6">
@@ -173,13 +122,6 @@ const StudentOverview = ({ user }) => {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2-2v2m8 0V6a2 2 0 00-2 2H6a2 2 0 00-2-2V4m16 2v10a2 2 0 01-2 2H4a2 2 0 01-2-2V6a2 2 0 012-2h16a2 2 0 012 2z" />
             </svg>
             <span className="text-sm font-medium text-gray-700">Apply for Job</span>
-          </button>
-          
-          <button className="flex flex-col items-center p-4 bg-yellow-50 rounded-lg hover:bg-yellow-100 transition">
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-yellow-600 mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-            <span className="text-sm font-medium text-gray-700">View Notifications</span>
           </button>
         </div>
       </div>
