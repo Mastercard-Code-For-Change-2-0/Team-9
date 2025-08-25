@@ -75,5 +75,16 @@
     "skills": ["Demo"],
     "program": "Demo Program",
     "status": "active"
+  },
+  {
+    "id": 8,
+    "username": "clerk",
+    "password": "clerk123",
+    "name": "Clerk",
+    "role": "clerk",
+    "email": "clerk@example.com",
+    "skills": ["Data Entry"],
+    "program": "Clerk Demo",
+    "status": "active"
   }
 ]
